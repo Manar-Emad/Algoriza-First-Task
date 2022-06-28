@@ -116,13 +116,6 @@ class RegisterScreen extends StatelessWidget {
               ),
            ),
          ),
-       //-base-
-         // -styles-
-         // -components-
-         // -colors-
-         // -onBoarding screen-
-         // -loginScreen-
-         // -RegisterScreen-
        ],
      ),
    ) ,
