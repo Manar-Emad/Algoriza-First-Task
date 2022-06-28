@@ -105,7 +105,7 @@ class RegisterScreen extends StatelessWidget {
                      text: 'Has any account?',
                      textButton:'Sign in here' ,textStyle: blue14bold(),textStyle2: black2416()),
                   sizedBoxh1,
-                  Center(
+                   Center(
                     child: Text('By registering your account, you are agree to our ',
                      style: grey12regular(),textAlign: TextAlign.center,maxLines: 2,overflow: TextOverflow.ellipsis,
                  ),
@@ -116,7 +116,13 @@ class RegisterScreen extends StatelessWidget {
              ),
            ),
          ),
-
+       //-base-
+         // -styles-
+         // -components-
+         // -colors-
+         // -onBoarding screen-
+         // -loginScreen-
+         // -RegisterScreen-
        ],
      ),
    ) ,
