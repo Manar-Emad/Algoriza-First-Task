@@ -26,8 +26,7 @@ class RegisterScreen extends StatelessWidget {
          Stack(
            alignment: AlignmentDirectional.centerStart,
              children: [
-             Container(
-               color: Colors.red,
+             SizedBox(
                width: getWidth(context),
                height: getHeight(context)/7,
                child:const Image(image: AssetImage('assets/images/img.PNG'),

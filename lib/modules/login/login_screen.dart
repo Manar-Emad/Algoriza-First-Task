@@ -43,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                       child: FormFeild(
                         keyboardType: TextInputType.number,
                         hintText: 'Eg. 812345678',
-                          controller: phoneController,
+                        controller: phoneController,
                           textValidate: 'Phone number is not registered',
                       ),
                     ),
