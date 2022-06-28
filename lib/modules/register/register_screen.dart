@@ -113,7 +113,7 @@ class RegisterScreen extends StatelessWidget {
                  Center(child: TextButton(onPressed:(){},child:Text('terms and conditions',style:blue12regular() ,textAlign: TextAlign.center,))),
 
                ],
-             ),
+              ),
            ),
          ),
        //-base-
