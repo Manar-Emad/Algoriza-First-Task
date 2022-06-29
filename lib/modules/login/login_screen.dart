@@ -58,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       widget: CountryPicker(),
                       textValidate: 'Phone number is not registered',
                       ///TODO correct it
-                      validateFunction: () {
+                       validateFunction: () {
                           setState(() {
                             showTooltip = true;
                           });
