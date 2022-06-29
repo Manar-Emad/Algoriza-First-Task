@@ -9,11 +9,10 @@ import 'package:algoriza_ftask/shared/components/row_text_button.dart';
 import 'package:algoriza_ftask/shared/styles/colors.dart';
 import 'package:algoriza_ftask/shared/styles/sizes.dart';
 import 'package:algoriza_ftask/shared/styles/styles.dart';
-import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {
-  RegisterScreen({Key? key}) : super(key: key);
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -55,11 +54,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       },
                       child: const CircleAvatar(
                         backgroundColor: secondColor,
-                        radius: 14,
+                        //radius: 14,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 5),
-                          child: Icon(Icons.arrow_back_ios,
-                              size: 13, color: defTextColor),
+                          padding: EdgeInsets.only(left:10),
+                          child: Icon(
+                              Icons.arrow_back_ios, color: defTextColor),
                         ),
                       ),
                     ),
@@ -70,13 +69,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Form(
                 key: formKey,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Email',
-                        style: black2414bold(),
+                        style: black2416bold(),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 10, bottom: 15),
@@ -89,7 +88,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                       Text(
                         'Phone Number',
-                        style: black2414bold(),
+                        style: black2416bold(),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 10, bottom: 15),
@@ -103,7 +102,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                       Text(
                         'Password',
-                        style: black2414bold(),
+                        style: black2416bold(),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 10, bottom: 15),
@@ -146,12 +145,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           widget: RegisterScreen(),
                           text: 'Has any account?',
                           textButton: 'Sign in here',
-                          textStyle: blue12bold(),
-                          textStyle2: black2614()),
+                          textStyle: blue16bold(),
+                          textStyle2: black2416()),
                       Center(
                         child: Text(
                           'By registering your account, you are agree to our ',
-                          style: grey12regular(),
+                          style: grey14regular(),
                           textAlign: TextAlign.center,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
@@ -162,7 +161,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               onPressed: () {},
                               child: Text(
                                 'terms and conditions',
-                                style: blue12regular(),
+                                style: blue14regular(),
                                 textAlign: TextAlign.center,
                               ))),
                     ],

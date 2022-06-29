@@ -22,9 +22,12 @@ class DefaultButton extends StatelessWidget {
       child: MaterialButton(
         onPressed:
           onTap,
-        child: Text(text,
-          style: const TextStyle(color: defTextColor,
-          ),),
+         child: Text(text,style:const TextStyle(
+          fontSize: 18.0,
+          fontWeight: FontWeight.bold,
+          color: defTextColor,
+        ) ,
+         ),
       ),
     );
   }
@@ -61,7 +64,8 @@ class MyOutlinedButton extends StatelessWidget {
               width: getWidth(context)/8,
               child:const Image(image: AssetImage('assets/images/google.png')),
             ),
-            Text(text,style: const TextStyle(color: blueColor,),),
+            Text(text,style: const TextStyle(color: blueColor,fontSize: 18.0,
+              fontWeight: FontWeight.bold,),),
           ],
         ),
       ),

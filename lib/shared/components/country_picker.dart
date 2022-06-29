@@ -57,8 +57,8 @@ class _CountryPickerState extends State<CountryPicker> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('+ ',style: black14bold(),),
-            Text(countryCode,style: black14bold(),),
+              Text('+ ',style: black16bold(),),
+            Text(countryCode,style: black16bold(),),
             const Icon(Icons.keyboard_arrow_down,size: 20,color: secondColor,)
           ],),
         ),

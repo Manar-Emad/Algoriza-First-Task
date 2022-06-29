@@ -1,9 +1,11 @@
+import 'package:algoriza_ftask/modules/onboard/onboard_screen.dart';
 import 'package:algoriza_ftask/modules/register/register_screen.dart';
 import 'package:algoriza_ftask/shared/components/buttons.dart';
 import 'package:algoriza_ftask/shared/components/country_picker.dart';
 import 'package:algoriza_ftask/shared/components/divider.dart';
 import 'package:algoriza_ftask/shared/components/form_feild.dart';
 import 'package:algoriza_ftask/shared/components/login_register_text.dart';
+import 'package:algoriza_ftask/shared/components/navigate.dart';
 import 'package:algoriza_ftask/shared/components/row_text_button.dart';
 import 'package:algoriza_ftask/shared/styles/sizes.dart';
 import 'package:algoriza_ftask/shared/styles/styles.dart';
@@ -39,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               TextLR(text: 'Sign in', onTap: () {}),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -47,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       padding: const EdgeInsets.only(bottom: 10),
                       child: Text(
                         'Phone Number',
-                        style: black2414bold(),
+                        style: black2416bold(),
                       ),
                     ),
                     Form(
@@ -83,21 +85,23 @@ class _LoginScreenState extends State<LoginScreen> {
                       padding: const EdgeInsets.symmetric(vertical: 15),
                       child: MyOutlinedButton(
                         text: 'Sign with by google',
-                        onTap: () {},
+                        onTap: () {
+                          navigateTo(context, OnBoardScreen());
+                        },
                       ),
                     ),
                     RowText(
-                        widget: RegisterScreen(),
+                        widget: const RegisterScreen(),
                         text: 'Doesn\'t has any account?',
                         textButton: 'Register here',
-                        textStyle: blue12bold(),
-                        textStyle2: black2614()),
+                        textStyle: blue16bold(),
+                        textStyle2: black2416()),
                     Padding(
                       padding:
                           const EdgeInsets.symmetric(horizontal: 20,vertical: 5),
                       child: Text(
                         'Use the application according to policy rules , Any kinds of violations will be subject to sanctions.',
-                        style: grey12regular(),
+                        style: grey14regular(),
                         textAlign: TextAlign.center,
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,

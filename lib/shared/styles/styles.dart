@@ -22,6 +22,11 @@ TextStyle black2414bold() => const TextStyle(
   fontWeight: FontWeight.bold,
   color:black54Color,
 );
+TextStyle black2416bold() => const TextStyle(
+  fontSize: 16.0,
+  fontWeight: FontWeight.bold,
+  color:black54Color,
+);
 
 /// blackBold Style
 TextStyle black24bold() => const TextStyle(
@@ -39,12 +44,22 @@ TextStyle black20bold() => const TextStyle(
   fontWeight: FontWeight.bold,
   color:secondColor,
 );
+TextStyle black16bold() => const TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.bold,
+    color: Colors.black
+);
 TextStyle black14bold() => const TextStyle(
     fontSize: 14.0,
     fontWeight: FontWeight.bold,
     color: Colors.black
 );
 
+
+TextStyle black16regular() => const TextStyle(
+    fontSize: 16.0,
+    color: Colors.black
+);
 /// grey regular Style
 TextStyle grey14regular() => const TextStyle(
   fontSize: 14.0,
@@ -52,6 +67,10 @@ TextStyle grey14regular() => const TextStyle(
 );
 TextStyle grey12regular() => const TextStyle(
   fontSize: 12.0,
+  color:greyColor,
+
+);TextStyle grey16regular() => const TextStyle(
+  fontSize: 16.0,
   color:greyColor,
 );
 
@@ -73,6 +92,11 @@ TextStyle prim24bold() => const TextStyle(
   fontWeight: FontWeight.bold,
   color: primaryColor,
 );
+TextStyle prim16bold() => const TextStyle(
+  fontSize: 16.0,
+  fontWeight: FontWeight.bold,
+  color: primaryColor,
+);
 TextStyle prim14bold() => const TextStyle(
   fontSize: 14.0,
   fontWeight: FontWeight.bold,
@@ -82,6 +106,10 @@ TextStyle prim14bold() => const TextStyle(
 ///blue style
 TextStyle blue14regular() => const TextStyle(
   fontSize: 14.0,
+  color: blueColor,
+);
+TextStyle blue16regular() => const TextStyle(
+  fontSize: 16.0,
   color: blueColor,
 );
 TextStyle blue12regular() => const TextStyle(
@@ -98,7 +126,17 @@ TextStyle blue12bold() => const TextStyle(
   fontWeight: FontWeight.bold,
   color: blueColor,
 );
-
+TextStyle blue16bold() => const TextStyle(
+  fontSize: 16.0,
+  fontWeight: FontWeight.bold,
+  color: blueColor,
+);
+///white style
+TextStyle white14bold() => const TextStyle(
+  fontSize: 14.0,
+  fontWeight: FontWeight.bold,
+  color: defTextColor,
+);
 
 ///MaxLines Style
 Text txtMaxLines1(String txt) =>  Text(txt,

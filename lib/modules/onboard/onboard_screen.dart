@@ -39,13 +39,13 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
   Widget build(BuildContext context) {
     list = [
       BoardModel(
-        image: 'assets/images/delivery1.png',
+        image: 'assets/images/sammy-bicycle-courier-delivering-food.png',
         title: 'Get food delivery to your doorstep asap',
         body:
             'we have young and professional delivery team that will bring your food as soon as possible to your doorstep',
       ),
       BoardModel(
-        image: 'assets/images/man2.png',
+        image: 'assets/images/sammy-done.png.png',
         title: 'Buy Any Food from your favourite restaurant',
         body:
             'we are constantly adding your favourite restaurant throughout the territory and around your area carefully selected',
@@ -57,7 +57,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
+            children: <Widget>[ 
               Padding(
                 padding: const EdgeInsets.only(bottom: 5),
                 child: Row(
@@ -93,51 +93,48 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                   },
                   controller: controller,
                   itemCount: list.length,
-                  itemBuilder: (context, i) => SizedBox(
-                    height: getHeight(context)/1.2,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        RichText(
-                          text:  TextSpan(
-                            children: <TextSpan>[
-                               TextSpan(text: '7', style: logoStyle(fLogoColor)),
-                               TextSpan(text: 'Krave', style: logoStyle(logoColor)),
-                            ],
+                  itemBuilder: (context, i) => Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                         Image(
+                          height: getHeight(context)/15 ,
+                          image: AssetImage(
+                            'assets/images/7.png',
                           ),
                         ),
-                        Image(
-                          height: getHeight(context)/2.6,
-                        width: getWidth(context)/1.2,
+                      Expanded(
+                        child: Image(
                           image: AssetImage(
                             list[i].image,
                           ),
                         ),
-                        Text(list[i].title, maxLines:2,overflow: TextOverflow.ellipsis,
-                          style: black20bold(), textAlign: TextAlign.center,),
-                        sizedBoxh1,
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 15),
-                          child: Text(list[i].body,style: grey12regular(),textAlign: TextAlign.center,
-                            maxLines: 3 ,overflow: TextOverflow.ellipsis,
+                      ),
+                      Text(list[i].title, maxLines:2,overflow: TextOverflow.ellipsis,
+                        style: black24bold(),
+                        textAlign: TextAlign.center,
+                      ),
+                      sizedBoxh1,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: Text(list[i].body,style: grey16regular(),textAlign: TextAlign.center,
+                          maxLines: 3 ,overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 20),
+                        child: SmoothPageIndicator(
+                          count: list.length,
+                          controller: controller,
+                          effect: const ScrollingDotsEffect(
+                            dotColor: indicatorInActiveColor,
+                            activeDotColor: indicatorActiveColor,
+                            dotWidth: 10,
+                            dotHeight: 4,
+                            spacing: 10,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: SmoothPageIndicator(
-                            count: list.length,
-                            controller: controller,
-                            effect: const ScrollingDotsEffect(
-                              dotColor: indicatorInActiveColor,
-                              activeDotColor: indicatorActiveColor,
-                              dotWidth: 10,
-                              dotHeight: 4,
-                              spacing: 10,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -156,7 +153,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                 text: 'Get Started',
               ),
                RowText(text: 'Don\'t have an account?',
-                 textButton: 'Sign up',textStyle: prim14bold(),textStyle2: black14bold(),
+                 textButton: 'Sign up',textStyle: prim16bold(),textStyle2: black16regular(),
                  widget: RegisterScreen(),),
             ],
           ),
