@@ -93,6 +93,11 @@ TextStyle blue14bold() => const TextStyle(
   fontWeight: FontWeight.bold,
   color: blueColor,
 );
+TextStyle blue12bold() => const TextStyle(
+  fontSize: 12.0,
+  fontWeight: FontWeight.bold,
+  color: blueColor,
+);
 
 
 ///MaxLines Style

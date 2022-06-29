@@ -12,7 +12,7 @@ class CountryPicker extends StatefulWidget {
 }
 
 class _CountryPickerState extends State<CountryPicker> {
-  String countryCode='+ 20';
+  String countryCode='20';
 
   @override
   Widget build(BuildContext context) {
@@ -49,15 +49,19 @@ class _CountryPickerState extends State<CountryPicker> {
           ),
         );
       },
-      child: SizedBox(
-        width: getWidth(context)/6,
-        height: getHeight(context)/20,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-          Text(countryCode,style: black14bold(),),
-          const Icon(Icons.keyboard_arrow_down,size: 20,color: secondColor,)
-        ],),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 5),
+        child: SizedBox(
+          width: getWidth(context)/6,
+          height: getHeight(context)/20,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('+ ',style: black14bold(),),
+            Text(countryCode,style: black14bold(),),
+            const Icon(Icons.keyboard_arrow_down,size: 20,color: secondColor,)
+          ],),
+        ),
       ),
     );
   }

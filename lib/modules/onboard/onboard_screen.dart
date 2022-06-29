@@ -51,109 +51,115 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
             'we are constantly adding your favourite restaurant throughout the territory and around your area carefully selected',
       ),
     ];
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Expanded(
-              child: PageView.builder(
-                physics: const BouncingScrollPhysics(),
-                onPageChanged: (int index) {
-                  if (index == (list.length - 1) && !isLast) {
-                    setState(() => isLast = true);
-                  } else if (isLast) {
-                    setState(() => isLast = false);
-                  }
-                },
-                controller: controller,
-                itemCount: list.length,
-                itemBuilder: (context, i) => Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                  Container(
-                  width:getWidth(context)/5,
-                  height: getHeight(context)/15,
-                  clipBehavior:Clip.antiAliasWithSaveLayer ,
-                  decoration:  BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color:skipColor ,
-                  ),
-                  child: MaterialButton(
-                    onPressed: (){
-                      navigateAndFinish(context, LoginScreen(),);
-                    },
-                    child: const Text('Skip'),
-                  ),
-                ),
-                      ],
-                    ),
-                    RichText(
-                      text:  TextSpan(
-                        children: <TextSpan>[
-                           TextSpan(text: '7', style: logoStyle(fLogoColor)),
-                           TextSpan(text: 'Krave', style: logoStyle(logoColor)),
-                        ],
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(bottom: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      width:getWidth(context)/5,
+                      height: getHeight(context)/15,
+                      clipBehavior:Clip.antiAliasWithSaveLayer ,
+                      decoration:  BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color:skipColor ,
                       ),
-                    ),
-                    Image(
-                      height: getHeight(context)/2,
-                    width: getWidth(context),
-                      image: AssetImage(
-                        list[i].image,
-                      ),
-                    ),
-                    sizedBoxh1,
-                    Text(list[i].title, maxLines:2,overflow: TextOverflow.ellipsis,
-                      style: black20bold(), textAlign: TextAlign.center,),
-                    sizedBoxh1,
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: Text(list[i].body,style: grey14regular(),textAlign: TextAlign.center,
-                        maxLines: 3 ,overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    sizedBoxh3,
-                    SmoothPageIndicator(
-                      count: list.length,
-                      controller: controller,
-                      effect: const ScrollingDotsEffect(
-                        dotColor: indicatorInActiveColor,
-                        activeDotColor: indicatorActiveColor,
-                        dotWidth: 10,
-                        dotHeight: 4,
-                        spacing: 10,
+                      child: MaterialButton(
+                        onPressed: (){
+                          navigateAndFinish(context, LoginScreen(),);
+                        },
+                        child: const Text('Skip'),
                       ),
                     ),
                   ],
                 ),
               ),
-            ),
-            DefaultButton(
-              onTap: () {
-                if (isLast) {
-                  navigateAndFinish(context, LoginScreen());
-                } else {
-                  controller.nextPage(
-                    duration: const Duration(milliseconds: 750),
-                    curve: Curves.fastLinearToSlowEaseIn,
-                  );
-                }
-              },
-              color: primaryColor,
-              text: 'Get Started',
-            ),
-             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child:RowText(text: 'Don\'t have an account?',
-                textButton: 'Sign up',textStyle: prim14bold(),textStyle2: black14bold(),
-                widget: RegisterScreen(),)
-            ),
-          ],
+              Expanded(
+                child: PageView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  onPageChanged: (int index) {
+                    if (index == (list.length - 1) && !isLast) {
+                      setState(() => isLast = true);
+                    } else if (isLast) {
+                      setState(() => isLast = false);
+                    }
+                  },
+                  controller: controller,
+                  itemCount: list.length,
+                  itemBuilder: (context, i) => SizedBox(
+                    height: getHeight(context)/1.2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        RichText(
+                          text:  TextSpan(
+                            children: <TextSpan>[
+                               TextSpan(text: '7', style: logoStyle(fLogoColor)),
+                               TextSpan(text: 'Krave', style: logoStyle(logoColor)),
+                            ],
+                          ),
+                        ),
+                        Image(
+                          height: getHeight(context)/2.6,
+                        width: getWidth(context)/1.2,
+                          image: AssetImage(
+                            list[i].image,
+                          ),
+                        ),
+                        Text(list[i].title, maxLines:2,overflow: TextOverflow.ellipsis,
+                          style: black20bold(), textAlign: TextAlign.center,),
+                        sizedBoxh1,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
+                          child: Text(list[i].body,style: grey12regular(),textAlign: TextAlign.center,
+                            maxLines: 3 ,overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: SmoothPageIndicator(
+                            count: list.length,
+                            controller: controller,
+                            effect: const ScrollingDotsEffect(
+                              dotColor: indicatorInActiveColor,
+                              activeDotColor: indicatorActiveColor,
+                              dotWidth: 10,
+                              dotHeight: 4,
+                              spacing: 10,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              DefaultButton(
+                onTap: () {
+                  if (isLast) {
+                    navigateAndFinish(context, LoginScreen());
+                  } else {
+                    controller.nextPage(
+                      duration: const Duration(milliseconds: 750),
+                      curve: Curves.fastLinearToSlowEaseIn,
+                    );
+                  }
+                },
+                color: primaryColor,
+                text: 'Get Started',
+              ),
+               RowText(text: 'Don\'t have an account?',
+                 textButton: 'Sign up',textStyle: prim14bold(),textStyle2: black14bold(),
+                 widget: RegisterScreen(),),
+            ],
+          ),
         ),
       ),
     );
