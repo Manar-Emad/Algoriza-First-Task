@@ -124,7 +124,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        padding: const EdgeInsets.only(top: 10,bottom: 15),
                         child: DefaultButton(color: blueColor,
                           onTap: () {
                             if (formKey.currentState!.validate()) {
@@ -136,7 +136,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                       const RowDivider(),
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        padding: const EdgeInsets.only(top: 15),
                         child: MyOutlinedButton(
                           text: 'Sign with by google',
                           onTap: () {},
@@ -146,9 +146,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           widget: RegisterScreen(),
                           text: 'Has any account?',
                           textButton: 'Sign in here',
-                          textStyle: blue14bold(),
-                          textStyle2: black2416()),
-                      sizedBoxh1,
+                          textStyle: blue12bold(),
+                          textStyle2: black2614()),
                       Center(
                         child: Text(
                           'By registering your account, you are agree to our ',

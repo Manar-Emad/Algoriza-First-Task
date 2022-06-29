@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 5),
+                      padding: const EdgeInsets.only(bottom: 10),
                       child: Text(
                         'Phone Number',
                         style: black2414bold(),
@@ -68,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      padding: const EdgeInsets.symmetric(vertical: 15),
                       child: DefaultButton(
                         onTap: () {
                           if (formKey.currentState!.validate()) {
@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const RowDivider(),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      padding: const EdgeInsets.symmetric(vertical: 15),
                       child: MyOutlinedButton(
                         text: 'Sign with by google',
                         onTap: () {},
@@ -94,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         textStyle2: black2614()),
                     Padding(
                       padding:
-                          const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                          const EdgeInsets.symmetric(horizontal: 20,vertical: 5),
                       child: Text(
                         'Use the application according to policy rules , Any kinds of violations will be subject to sanctions.',
                         style: grey12regular(),
